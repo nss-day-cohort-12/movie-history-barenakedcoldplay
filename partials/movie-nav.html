@@ -1,11 +1,9 @@
-<nav>
+<nav ng-controller="MovieCtrl">
   <ul>
   	<!-- will remove first two anchor els -->
-    <li><a href="#/movies/list">List Movies</a></li>
-    <li><a href="/#/movies/new">Add Movie</a></li>
     <!-- search bar and button -->
-    <li><input type="text" placeholder="Search"></li>
-    <li><button>Search</button></li>
+    <li><input type="text" placeholder="Search" ng-model="movieToSearch"></li>
+    <li><button ng-click="search()">Search</button></li>
     <li class="align-right"><a href="/#/logout">Logout</a></li>
   </ul>
 </nav>

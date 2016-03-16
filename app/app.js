@@ -9,7 +9,7 @@ let MovieHistory = angular.module("MovieApp", ["ngRoute", "firebase"]);
   before it will resolve (see below)
  */
 let isAuth = (authenticate) => new Promise((resolve, reject) => {
-  if (authFactory.isAuthenticated()) {
+  if (authenticate.isAuthenticated()) {
     console.log("User is authenticated, resolve route promise");
     resolve();
   } else {
