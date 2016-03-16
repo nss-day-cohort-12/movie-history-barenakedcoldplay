@@ -15,7 +15,7 @@
 
     function fetch(){
       $http.get("http://img.omdbapi.com/?apikey=[7c212437]&" + $scope.search)
-      .then(function(response){ $scope.details = response.data; });
+      .then(function(response){ $scope.details = response.data;});
 
       $http.get("http://www.omdbapi.com/?s=" + $scope.search)
       .then(function(response){ $scope.related = response.data; });

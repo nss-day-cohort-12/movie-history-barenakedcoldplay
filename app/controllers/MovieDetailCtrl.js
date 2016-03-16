@@ -36,7 +36,7 @@ MovieHistory.controller("MovieDetailCtrl",
       on the button in the view
     */
     $scope.deleteMovie = () => $http
-        .delete(`https://nss-demo-instructor.firebaseio.com/songs/${$routeParams.songId}.json`)
+        .delete(`https://moviehistbnc.firebaseio.com//movies/${$routeParams.movieId}.json`)
         .then(() => $location.url("/"));
   }
 ]);
