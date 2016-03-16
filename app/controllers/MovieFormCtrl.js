@@ -12,7 +12,7 @@ MovieHistory.controller("MovieFormCtrl",
     $scope.newMovie = {
       name: "",
       year: "",
-      actor: ""
+      actors: ""
     };
 
     // Function bound to the Add Movie button in the view template
@@ -25,9 +25,9 @@ MovieHistory.controller("MovieFormCtrl",
         // Remember to stringify objects/arrays before
         // sending them to an API
         JSON.stringify({
-          name: $scope.newMovie.name,
+          name: $scope.newMovie.names,
           year: $scope.newMovie.year,
-          actor: $scope.newMovie.actor
+          actors: $scope.newMovie.actors
         })
 
       // The $http.post() method returns a promise, so you can use then()

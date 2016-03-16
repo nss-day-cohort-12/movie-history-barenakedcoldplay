@@ -21,8 +21,8 @@
       .then(function(response){ $scope.related = response.data; });
     }
 
-    $scope.update = function(movie){
-      $scope.search = movie.Title;
+    $scope.update = function(movies){
+      $scope.search = movies.Title;
     };
 
     $scope.select = function(){
