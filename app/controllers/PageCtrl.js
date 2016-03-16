@@ -5,7 +5,7 @@ MovieHistory.controller("PageCtrl",
   "$scope",
   "$location",
   "$http",
-  "authFactory",
+  "authenticate",
   "firebaseURL",
 
   function ($scope, $location, $http, authFactory, firebaseURL) {

@@ -1,16 +1,15 @@
 <article class="movie-list">
 
   <header><h1>List of Movies</h1></header>
-
+<!-- Will be main partial in the future -->
   <section>
+	<!-- needs button list w/ untracked, unwatched, watched, favorites -->
 
+	<!-- edit HTML to publish posters, not movie names, to DOM -->
     <div ng-repeat="movie in movies">
       <a href="#/movies/{{ movie.name }}">{{ movie.name }}</a>
     </div>
 
-    <div style="margin-top: 40px;">
-      <a href="#/movies/new">Create New Movies</a>
-    </div>
 
   </section>
 

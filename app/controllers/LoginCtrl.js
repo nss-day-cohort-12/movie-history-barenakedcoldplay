@@ -1,57 +1,41 @@
 "use strict";
 
-MovieHistory.controller("LoginCtrl",
-[
+MovieHistory.controller("LoginCtrl", [
   "$scope",
+  "authenticate",
   "$location",
-  "$http",
-  "authFactory",
-  "firebaseURL",
 
-  function ($scope, $location, $http, authFactory, firebaseURL) {
+  function ($scope, Authenticate, $location) {
 
-    // Local variables
-    let ref = new Firebase(firebaseURL);
-
-    // Variables on $scope for use in DOM
-    $scope.account = { email: "", password: "" };
-    $scope.message = "";
-
-    // Unauthenticate user when /logout path used
-    if ($location.path() === "/logout") {
-      ref.unauth();
-    }
-
-    /*
-      Attempt to register a new user account.
-      If successful, immediately log user in.
-     */
-    $scope.register = () => {
-      ref.createUser({
-        email    : $scope.account.email,
-        password : $scope.account.password
-      }, (error, userData) => {
-        if (error) {
-          console.log(`Error creating user: ${error}`);
-        } else {
-          console.log(`Created user account with uid: ${userData.uid}`);
-          $scope.login();
-        }
-      });
+    $scope.user = {
+      email: "",
+      password: ""
     };
 
-    /*
-      Attempt to authenticate the user with the
-      supplied credentials.
-     */
-    $scope.login = () => 
-      authFactory
-        .authenticate($scope.account)
-        .then(() => {
-          $location.path("/");
-          $scope.$apply();  // Needed for $location.path() to succeed
-        });
+    $scope.register = function (user) {
+      const email = user.email;
+      const password = user.password;
+      Authenticate.createUser(email, password)
+      .then(
+        () => Authenticate.loginUser(user.email, user.password),
+        (error) => console.log('could not register user')
+      ).then(
+        () => console.log('success'),
+        (error) => console.log('could not authenticate user')
+      )
+    }
 
+    $scope.login = function (user) {
+      Authenticate.loginUser(user.email, user.password)
+      .then(
+        () => {
+          // $location.path('/movies/list');
+          console.log('done');
+        },
+        (error) => console.log('could not authenticate user')
+      );
+    }
 
   }
+
 ]);

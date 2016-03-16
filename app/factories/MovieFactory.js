@@ -6,12 +6,12 @@ MovieHistory.factory("movieFactory", ($q, $http) =>
       $http
         .get("https://moviehistbnc.firebaseio.com/movies.json")
         .success(
-          movieCollection => 
+          movieCollection =>
           	{resolve(movieCollection)
           		console.log("SUCCESS", movieCollection);},
           error => reject(error)
         )
     )
-    return makeMovies
+    return makeMovies;
 });
 
