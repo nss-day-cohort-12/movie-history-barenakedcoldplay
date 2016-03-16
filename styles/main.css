@@ -1,0 +1,33 @@
+body {
+  padding: 0;
+  margin: 0; }
+
+nav {
+  background-color: goldenrod;
+  padding: 5px; }
+  nav ul li {
+    display: inline;
+    list-style-type: none;
+    padding: 5px;
+    margin: 15px 0; }
+
+.text--small {
+  font-size: 0.7em; }
+
+.c-song {
+  margin: 10px 0; }
+
+.rating {
+  display: inline;
+  padding: 0; }
+  .rating li {
+    display: inline;
+    list-style-type: none; }
+
+.star--filled {
+  color: gold; }
+
+.star--empty {
+  color: black; }
+
+/*# sourceMappingURL=main.css.map */
