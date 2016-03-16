@@ -11,9 +11,8 @@ MovieHistory.controller("MovieFormCtrl",
     // Default property values for keys bound to input fields
     $scope.newMovie = {
       name: "",
-      albumName: "",
-      albumYear: "",
-      artist: ""
+      year: "",
+      actor: ""
     };
 
     // Function bound to the Add Movie button in the view template
@@ -21,17 +20,14 @@ MovieHistory.controller("MovieFormCtrl",
 
       // POST the movie to Firebase
       $http.post(
-        "https://nss-demo-instructor.firebaseio.com/songs.json",
+        "https://moviehistbnc.firebaseio.com/movies.json",
 
         // Remember to stringify objects/arrays before
         // sending them to an API
         JSON.stringify({
           name: $scope.newMovie.name,
-          album: {
-            name: $scope.newMovie.albumName,
-            year: $scope.newMovie.albumYear,
-          },
-          artist: $scope.newMovie.artist
+          year: $scope.newMovie.year,
+          actor: $scope.newMovie.actor
         })
 
       // The $http.post() method returns a promise, so you can use then()

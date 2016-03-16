@@ -3,7 +3,7 @@
 /* exported MovieHistory */
 
 let MovieHistory = angular.module("MovieApp", ["ngRoute", "firebase"])
-  .constant('firebaseURL', "https://nss-demo-instructor.firebaseio.com");
+  .constant('firebaseURL', "https://moviehistbnc.firebaseio.com/");
 
 /*
   Define a promise for any view that needs an authenticated user
@@ -66,7 +66,7 @@ MovieHistory.run([
   "$location",
 
   ($location) => {
-    let movieHistoryRef = new Firebase("https://nss-demo-instructor.firebaseio.com");
+    let movieHistoryRef = new Firebase("https://moviehistbnc.firebaseio.com/");
 
     movieHistoryRef.onAuth(authData => {
       if (!authData) {

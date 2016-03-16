@@ -11,7 +11,7 @@ MovieHistory.controller("PageCtrl",
   function ($scope, $location, $http, authFactory, firebaseURL) {
 
     // Local variables
-    let ref = new Firebase("https://torrid-inferno-6120.firebaseio.com");
+    let ref = new Firebase("https://moviehistbnc.firebaseio.com/");
 
     $scope.isAuthenticated = () => {
       return authFactory.isAuthenticated();
