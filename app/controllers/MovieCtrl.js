@@ -14,7 +14,7 @@ MovieHistory.controller("MovieCtrl", [
     // Invoke the promise that reads from Firebase
     movieFactory().then(
       // Handle resolve() from the promise
-      function movieCollection () { 
+      function (movieCollection) { 
         Object.keys(movieCollection).forEach(key => {
         movieCollection[key].id = key;
         $scope.movies.push(movieCollection[key]);

@@ -1,14 +1,17 @@
 "use strict";
 
 MovieHistory.factory("movieFactory", ($q, $http) =>
-  () =>
-    $q((resolve, reject) => // Return a promise for our async XHR
+  function makeMovies () {
+    return $q((resolve, reject) => // Return a promise for our async XHR
       $http
-        .get("https://moviehistbnc.firebaseio.com//movies.json")
+        .get("https://moviehistbnc.firebaseio.com/movies.json")
         .success(
-          movieCollection => resolve(movieCollection),
+          movieCollection => 
+          	{resolve(movieCollection)
+          		console.log("SUCCESS", movieCollection);},
           error => reject(error)
         )
     )
-);
+    return makeMovies
+});
 

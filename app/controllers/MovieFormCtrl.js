@@ -25,7 +25,7 @@ MovieHistory.controller("MovieFormCtrl",
         // Remember to stringify objects/arrays before
         // sending them to an API
         JSON.stringify({
-          name: $scope.newMovie.names,
+          name: $scope.newMovie.name,
           year: $scope.newMovie.year,
           actors: $scope.newMovie.actors
         })
