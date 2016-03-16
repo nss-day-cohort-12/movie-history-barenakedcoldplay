@@ -1,0 +1,43 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>NSS Starter Kit - Angular</title>
+  <link rel="stylesheet" type="text/css" href="styles/main.css">
+</head>
+
+<body ng-app="MovieApp">
+
+  <nav ng-include="'partials/movie-nav.html'"></nav>
+
+  <div ng-view></div>
+
+  <script src="lib/bower_components/angular/angular.min.js"></script>
+  <script src="lib/bower_components/angular-route/angular-route.min.js"></script>
+  <script src="lib/bower_components/firebase/firebase.js"></script>
+  <script src="lib/bower_components/angularfire/dist/angularfire.min.js"></script>
+
+  <script src="app/app.js"></script>
+  <script src="app/factories/MovieFactory.js"></script>
+  <script src="app/factories/AuthFactory.js"></script>
+  <script src="app/controllers/MovieCtrl.js"></script>
+  <script src="app/controllers/MovieDetailCtrl.js"></script>
+  <script src="app/controllers/MovieFormCtrl.js"></script>
+  <script src="app/controllers/PageCtrl.js"></script>
+  <script src="app/controllers/movie-api.js"></script>
+  <script src="app/controllers/LoginCtrl.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

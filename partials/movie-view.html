@@ -1,0 +1,6 @@
+<a href="#/movies">&lt; Back to movie list</a>
+<section>
+  <h4>Movie #{{movieId}} - {{ elephantBrains.selectedMovie.name }}</h4>
+  <x-movie-history-movie-brief movie="elephantBrains.selectedMovie" max-rating="5"></x-movie-history-movie-brief>
+  <span class="text--small">Released in {{elephantBrains.selectedMovie.album.year}}</span>
+</section>

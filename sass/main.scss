@@ -1,0 +1,52 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+nav {
+  background-color: goldenrod;
+  padding: 5px;
+
+  ul {
+    li {
+      display: inline;
+      list-style-type: none;
+      padding: 5px;
+      margin: 15px 0;  
+    }
+  }
+}
+
+.song-list {
+  padding: 0 20px;
+}
+
+.align-right {
+  margin: 0 0 0 70px;
+}
+
+.text--small {
+  font-size: 0.7em;
+}
+
+.c-song {
+  margin: 10px 0;
+}
+
+.rating {
+  display: inline;
+  padding: 0;
+  
+  li {
+    display: inline;
+    list-style-type: none;
+  }
+}
+
+.star--filled {
+  color: gold;
+}
+
+.star--empty {
+  color: black;
+}
