@@ -1,6 +1,6 @@
 "use strict";
 
-MusicHistory.factory("authFactory", (firebaseURL) => {
+MovieHistory.factory("authFactory", (firebaseURL) => {
   let ref = new Firebase(firebaseURL);
 
   return {

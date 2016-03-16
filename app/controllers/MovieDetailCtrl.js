@@ -1,30 +1,30 @@
 "use strict";
 
-MusicHistory.controller("SongDetailCtrl",
+MovieHistory.controller("MovieDetailCtrl",
 [
   "$scope",
   "$routeParams",
   "$http",
   "$location",
-  "songFactory",
+  "movieFactory",
 
-  function ($scope, $routeParams, $http, $location, songFactory) {
+  function ($scope, $routeParams, $http, $location, movieFactory) {
 
     // Default properties for bound variables
-    $scope.songs = [];
-    $scope.selectedSong = {};
+    $scope.movies = [];
+    $scope.selectedMovie = {};
 
     // Invoke the promise that reads from Firebase
-    songFactory().then(
+    movieFactory().then(
 
       // Handle resolve() from the promise
-      songCollection => {
-        Object.keys(songCollection).forEach(key => {
-          songCollection[key].id = key;
-          $scope.songs.push(songCollection[key]);
+      movieCollection => {
+        Object.keys(movieCollection).forEach(key => {
+          movieCollection[key].id = key;
+          $scope.movies.push(movieCollection[key]);
         });
 
-        $scope.selectedSong = $scope.songs.filter(song => song.id === $routeParams.songId)[0];
+        $scope.selectedMovie = $scope.movies.filter(movie => movie.id === $routeParams.movieId)[0];
       },
 
       // Handle reject() from the promise
@@ -35,7 +35,7 @@ MusicHistory.controller("SongDetailCtrl",
       This function is bound to an ng-click directive
       on the button in the view
     */
-    $scope.deleteSong = () => $http
+    $scope.deleteMovie = () => $http
         .delete(`https://nss-demo-instructor.firebaseio.com/songs/${$routeParams.songId}.json`)
         .then(() => $location.url("/"));
   }

@@ -1,6 +1,6 @@
 "use strict";
 
-MusicHistory.controller("LoginCtrl",
+MovieHistory.controller("LoginCtrl",
 [
   "$scope",
   "$location",

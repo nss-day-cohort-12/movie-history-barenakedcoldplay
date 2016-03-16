@@ -1,15 +1,15 @@
-<article class="song-list">
+<article class="movie-list">
 
-  <header><h1>List of Songs</h1></header>
+  <header><h1>List of Movies</h1></header>
 
   <section>
 
-    <div ng-repeat="song in songs">
-      <a href="#/songs/{{ song.id }}">{{ song.name }}</a>
+    <div ng-repeat="movie in movies">
+      <a href="#/movies/{{ movie.id }}">{{ movie.name }}</a>
     </div>
 
     <div style="margin-top: 40px;">
-      <a href="#/songs/new">Create New Song</a>
+      <a href="#/movies/new">Create New Movies</a>
     </div>
 
   </section>

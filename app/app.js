@@ -1,8 +1,8 @@
 "use strict";
 
-/* exported MusicHistory */
+/* exported MovieHistory */
 
-let MusicHistory = angular.module("SongApp", ["ngRoute", "firebase"])
+let MovieHistory = angular.module("MovieApp", ["ngRoute", "firebase"])
   .constant('firebaseURL', "https://nss-demo-instructor.firebaseio.com");
 
 /*
@@ -20,19 +20,19 @@ let isAuth = (authFactory) => new Promise((resolve, reject) => {
 });
 
 /*
-  Set up routes for Music History app
+  Set up routes for Movie History app
  */
-MusicHistory.config(["$routeProvider",
+MovieHistory.config(["$routeProvider",
   function ($routeProvider) {
     $routeProvider.
       when("/", {
-        templateUrl: "partials/song-list.html",
-        controller: "SongCtrl",
+        templateUrl: "partials/movie-list.html",
+        controller: "MovieCtrl",
         resolve: { isAuth }
       }).
-      when("/songs/list", {
-        templateUrl: "partials/song-list.html",
-        controller: "SongCtrl",
+      when("/movies/list", {
+        templateUrl: "partials/movie-list.html",
+        controller: "MovieCtrl",
         resolve: { isAuth }
       }).
       when("/login", {
@@ -43,14 +43,14 @@ MusicHistory.config(["$routeProvider",
         templateUrl: "partials/login.html",
         controller: "LoginCtrl"
       }).
-      when("/songs/new", {
-        templateUrl: "partials/song-form.html",
-        controller: "SongFormCtrl",
+      when("/movies/new", {
+        templateUrl: "partials/movie-form.html",
+        controller: "MovieFormCtrl",
         resolve: { isAuth }
       }).
-      when("/songs/:songId", {
-        templateUrl: "partials/song-brief.html",
-        controller: "SongDetailCtrl",
+      when("/movies/:movieId", {
+        templateUrl: "partials/movie-brief.html",
+        controller: "MovieDetailCtrl",
         resolve: { isAuth }
       }).
       otherwise({
@@ -62,13 +62,13 @@ MusicHistory.config(["$routeProvider",
   When the application first loads, redirect the user to the login
   form if there is no authentication
  */
-MusicHistory.run([
+MovieHistory.run([
   "$location",
 
   ($location) => {
-    let musicHistoryRef = new Firebase("https://nss-demo-instructor.firebaseio.com");
+    let movieHistoryRef = new Firebase("https://nss-demo-instructor.firebaseio.com");
 
-    musicHistoryRef.onAuth(authData => {
+    movieHistoryRef.onAuth(authData => {
       if (!authData) {
         $location.path("/login");
       }

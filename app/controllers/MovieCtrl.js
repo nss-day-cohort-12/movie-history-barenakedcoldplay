@@ -1,22 +1,22 @@
 "use strict";
 
-MusicHistory.controller("SongCtrl", [
+MovieHistory.controller("MovieCtrl", [
   "$scope",
   "$location",
-  "songFactory",
+  "movieFactory",
 
-  function ($scope, $location, songFactory)  {
+  function ($scope, $location, movieFactory)  {
     // Default property values for keys bound to input fields
-    $scope.songSearchText = {name: "", artist: "", album: ""};
+    $scope.movieSearchText = {name: "", artist: "", album: ""};
     $scope.query = "";
-    $scope.songs = [];
+    $scope.movies = [];
 
     // Invoke the promise that reads from Firebase
-    songFactory().then(
+    movieFactory().then(
       // Handle resolve() from the promise
-      songCollection => Object.keys(songCollection).forEach(key => {
-        songCollection[key].id = key;
-        $scope.songs.push(songCollection[key]);
+      movieCollection => Object.keys(movieCollection).forEach(key => {
+        movieCollection[key].id = key;
+        $scope.movies.push(movieCollection[key]);
       }),
       // Handle reject() from the promise
       err => console.log(err)
