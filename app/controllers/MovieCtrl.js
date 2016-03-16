@@ -2,10 +2,9 @@
 
 MovieHistory.controller("MovieCtrl", [
   "$scope",
-  "$location",
   "movieFactory",
 
-  function ($scope, $location, movieFactory)  {
+  function ($scope, movieFactory)  {
     // Default property values for keys bound to input fields
     $scope.movieSearchText = {name: "", actors: "", year: ""};
     $scope.query = "";
@@ -14,7 +13,7 @@ MovieHistory.controller("MovieCtrl", [
     // Invoke the promise that reads from Firebase
     movieFactory().then(
       // Handle resolve() from the promise
-      function (movieCollection) { 
+      function (movieCollection) {
         Object.keys(movieCollection).forEach(key => {
         movieCollection[key].id = key;
         $scope.movies.push(movieCollection[key]);

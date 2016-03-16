@@ -1,8 +1,11 @@
 <nav>
   <ul>
-    <li><a href="#/">List Movies</a></li>
+  	<!-- will remove first two anchor els -->
+    <li><a href="#/movies/list">List Movies</a></li>
     <li><a href="/#/movies/new">Add Movie</a></li>
-    <li><a href="#/"><span ng-include="'partials/search.html'"></span></a></li>
+    <!-- search bar and button -->
+    <li><input type="text" placeholder="Search"></li>
+    <li><button>Search</button></li>
     <li class="align-right"><a href="/#/logout">Logout</a></li>
   </ul>
 </nav>

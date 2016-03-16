@@ -1,11 +1,5 @@
 'use strict';
 
-// angular.module('Movie-API', [
-//   "$scope",
-//   "$location",
-//   "$http",
-//   "movieFactory",
-//   ])
   MovieHistory.controller('MovieController', function($scope, $http){
     $scope.$watch('search', function() {
       fetch();
