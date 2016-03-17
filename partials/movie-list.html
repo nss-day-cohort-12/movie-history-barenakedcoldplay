@@ -1,16 +1,64 @@
 <article class="movie-list">
-
-  <header><h1>List of Movies</h1></header>
-
+	<nav>
+		<ul>
+	  	<!-- will remove first two anchor els -->
+	    <!-- search bar and button -->
+	    	<li><input type="text" placeholder="Search" ng-model="movieToSearch"></li>
+	    	<li><button ng-click="search()">Search</button></li>
+	    	<li class="align-right"><a href="/#/logout">Logout</a></li>
+	  </ul>
+  </nav>
+  <header><h1>Movie History</h1></header>
+<!-- Will be main partial in the future -->
   <section>
+	<!-- needs button list w/ untracked, unwatched, watched, favorites -->
+	<div>
+		<button ng-click="showUntrackedMovies()">Show Untracked</button>
+		<button ng-click="showUnwatchedMovies()">Show Unwatched</button>
+		<button ng-click="showWatchedMovies()">Show Watched</button>
+		<button ng-click="showFavorites()">Favorites</button>
+	</div>
+	<!-- edit HTML to publish posters, not movie names, to DOM -->
 
-    <div ng-repeat="movie in movies">
-      <a href="#/movies/{{ movie.name }}">{{ movie.name }}</a>
-    </div>
+	<div class="row" ng-if="displayUntrackedMovies">
+		<div class="col-md-4" ng-repeat="movie in searchResults">
+			<img src="{{ movie.poster }}" alt="">
+			<p><a href="#/movies/list" ng-click="addToWatchlist()">Add To Watchlist</a></p>
+		</div>
+	</div>
 
-    <div style="margin-top: 40px;">
-      <a href="#/movies/new">Create New Movies</a>
-    </div>
+	<div class="row" ng-if="displayUnwatchedMovies">
+		<div class="col-md-4" ng-repeat="movie in unwatchedMovies">
+			<img src="{{ movie.movie.poster }}" alt="">
+			<div>
+				<button class="{{ movie.movie.key }}" ng-click="updateRating($event, 1)">1</button>
+				<button class="{{ movie.movie.key }}" ng-click="updateRating($event, 2)">2</button>
+				<button class="{{ movie.movie.key }}" ng-click="updateRating($event, 3)">3</button>
+				<button class="{{ movie.movie.key }}" ng-click="updateRating($event, 4)">4</button>
+				<button class="{{ movie.movie.key }}" ng-click="updateRating($event, 5)">5</button>
+				<button class="{{ movie.movie.key }}" ng-click="updateRating($event, 6)">6</button>
+				<button class="{{ movie.movie.key }}" ng-click="updateRating($event, 7)">7</button>
+				<button class="{{ movie.movie.key }}" ng-click="updateRating($event, 8)">8</button>
+				<button class="{{ movie.movie.key }}" ng-click="updateRating($event, 9)">9</button>
+				<button class="{{ movie.movie.key }}" ng-click="updateRating($event, 10)">10</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="row" ng-if="displayWatchedMovies">
+		<div class="col-md-4" ng-repeat="movie in watchedMovies">
+			<img src="{{ movie.movie.poster }}" alt="">
+			<p>You rated this movie {{movie.movie.rating}} / 10 squares</p>
+		</div>
+	</div>
+
+	<div class="row" ng-if="displayFavorites">
+		<div class="col-md-4" ng-repeat="movie in favoriteMovies">
+			<img src="{{ movie.movie.poster }}" alt="">
+			<p>You rated this movie {{movie.movie.rating}} / 10 squares</p>
+			<p>What a great movie! wow</p>
+		</div>
+	</div>
 
   </section>
 
