@@ -1,5 +1,13 @@
 <article class="movie-list">
-
+	<nav>
+		<ul>
+	  	<!-- will remove first two anchor els -->
+	    <!-- search bar and button -->
+	    	<li><input type="text" placeholder="Search" ng-model="movieToSearch"></li>
+	    	<li><button ng-click="search()">Search</button></li>
+	    	<li class="align-right"><a href="/#/logout">Logout</a></li>
+	  </ul>
+  </nav>
   <header><h1>Movie History</h1></header>
 <!-- Will be main partial in the future -->
   <section>
@@ -11,14 +19,20 @@
 		<button>Favorites</button>
 	</div>
 	<!-- edit HTML to publish posters, not movie names, to DOM -->
-    <div ng-repeat="movie in movies">
-      <a href="#">{{ movie.title }}</a>
-      
-    </div>
 
-	<div id="search-result">
-		<img src="{{ movieToAdd.poster }}" />
-	</div>
+   	<div id="movie-card" class="col-md-4 card">
+   		<div ng-if="movieToAdd.title.length > 0">
+   			<img src="{{ movieToAdd.poster }}" alt="">
+	   		<div ng-if="!movieToAdd.user">
+   				<a href="#/movies/list">Add To Watchlist</a>
+   			</div>
+	   		<div ng-if="movieToAdd.user">
+	   			<p>{{ movieToAdd.rating }} / 10</p>
+	   		</div>
+   		</div>
+
+
+   	</div>
 
   </section>
 

@@ -9,7 +9,7 @@
 
 <body ng-app="MovieApp">
 
-  <nav ng-include="'partials/movie-nav.html'"></nav>
+<!--   <nav ng-include="'partials/movie-nav.html'"></nav> -->
 
   <div ng-view></div>
 
@@ -17,16 +17,16 @@
   <script src="lib/bower_components/angular-route/angular-route.min.js"></script>
   <script src="lib/bower_components/firebase/firebase.js"></script>
   <script src="lib/bower_components/angularfire/dist/angularfire.min.js"></script>
+  <script src="lib/bower_components/jquery/dist/jquery.min.js"></script>
 
   <script src="app/app.js"></script>
   <script src="app/factories/MovieFactory.js"></script>
   <script src="app/factories/AuthFactory.js"></script>
+  <script src="app/factories/postMovies.js"></script>
+  <script src="app/factories/store-variables.js"></script>
   <script src="app/controllers/MovieCtrl.js"></script>
-  <script src="app/controllers/MovieDetailCtrl.js"></script>
-  <script src="app/controllers/MovieFormCtrl.js"></script>
-  <script src="app/controllers/PageCtrl.js"></script>
-  <script src="app/controllers/movie-api.js"></script>
   <script src="app/controllers/LoginCtrl.js"></script>
+  <script src="app/controllers/NavCtrl.js"></script>
 </body>
 </html>
 
