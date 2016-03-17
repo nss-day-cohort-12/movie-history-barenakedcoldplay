@@ -24,11 +24,6 @@ let isAuth = (authenticate) => new Promise((resolve, reject) => {
 MovieHistory.config(["$routeProvider",
   function ($routeProvider) {
     $routeProvider.
-      when("/", {
-        templateUrl: "partials/movie-list.html",
-        controller: "MovieCtrl",
-        resolve: { isAuth }
-      }).
       when("/movies/list", {
         templateUrl: "partials/movie-list.html",
         controller: "MovieCtrl",

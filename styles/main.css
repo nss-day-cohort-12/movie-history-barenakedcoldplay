@@ -31,3 +31,7 @@ nav {
   color: black; }
 
 /*# sourceMappingURL=main.css.map */
+
+.card img {
+  height: 350px;
+}

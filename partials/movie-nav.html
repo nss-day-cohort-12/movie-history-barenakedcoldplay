@@ -1,9 +1,9 @@
-<nav ng-controller="MovieCtrl">
+<nav ng-controller="NavCtrl">
   <ul>
   	<!-- will remove first two anchor els -->
     <!-- search bar and button -->
     <li><input type="text" placeholder="Search" ng-model="movieToSearch"></li>
-    <li><button ng-click="search()">Search</button></li>
+    <li><button ng-click="storeSearchParams()">Search</button></li>
     <li class="align-right"><a href="/#/logout">Logout</a></li>
   </ul>
 </nav>
