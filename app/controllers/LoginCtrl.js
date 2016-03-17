@@ -20,7 +20,10 @@ MovieHistory.controller("LoginCtrl", [
         () => Authenticate.loginUser(user.email, user.password),
         (error) => console.log('could not register user')
       ).then(
-        () => console.log('success'),
+        () => {
+          $location.path('/movies/list');
+          console.log('success')
+        },
         (error) => console.log('could not authenticate user')
       )
     }
@@ -29,7 +32,7 @@ MovieHistory.controller("LoginCtrl", [
       Authenticate.loginUser(user.email, user.password)
       .then(
         () => {
-          // $location.path('/movies/list');
+          $location.path('/movies/list');
           console.log('done');
         },
         (error) => console.log('could not authenticate user')
