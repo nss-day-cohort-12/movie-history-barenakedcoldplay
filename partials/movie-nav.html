@@ -1,8 +1,9 @@
-<nav>
+<nav ng-controller="NavCtrl">
   <ul>
-    <li><a href="#/">List Movies</a></li>
-    <li><a href="/#/movies/new">Add Movie</a></li>
-    <li><a href="#/"><span ng-include="'partials/search.html'"></span></a></li>
+  	<!-- will remove first two anchor els -->
+    <!-- search bar and button -->
+    <li class="glyphicon glyphicon-sunglasses"><input type="text" placeholder="Search" ng-model="movieToSearch"></li>
+    <li><button ng-click="storeSearchParams()"><span class="glyphicon glyphicon-search"></span> Search</button></li>
     <li class="align-right"><a href="/#/logout">Logout</a></li>
   </ul>
 </nav>

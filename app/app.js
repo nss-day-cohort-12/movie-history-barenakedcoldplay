@@ -2,15 +2,14 @@
 
 /* exported MovieHistory */
 
-let MovieHistory = angular.module("MovieApp", ["ngRoute", "firebase"])
-  .constant('firebaseURL', "https://moviehistbnc.firebaseio.com/");
+let MovieHistory = angular.module("MovieApp", ["ngRoute", "firebase"]);
 
 /*
   Define a promise for any view that needs an authenticated user
   before it will resolve (see below)
  */
-let isAuth = (authFactory) => new Promise((resolve, reject) => {
-  if (authFactory.isAuthenticated()) {
+let isAuth = (authenticate) => new Promise((resolve, reject) => {
+  if (authenticate.isAuthenticated()) {
     console.log("User is authenticated, resolve route promise");
     resolve();
   } else {
@@ -25,11 +24,6 @@ let isAuth = (authFactory) => new Promise((resolve, reject) => {
 MovieHistory.config(["$routeProvider",
   function ($routeProvider) {
     $routeProvider.
-      when("/", {
-        templateUrl: "partials/movie-list.html",
-        controller: "MovieCtrl",
-        resolve: { isAuth }
-      }).
       when("/movies/list", {
         templateUrl: "partials/movie-list.html",
         controller: "MovieCtrl",
@@ -42,16 +36,6 @@ MovieHistory.config(["$routeProvider",
       when("/logout", {
         templateUrl: "partials/login.html",
         controller: "LoginCtrl"
-      }).
-      when("/movies/new", {
-        templateUrl: "partials/movie-form.html",
-        controller: "MovieFormCtrl",
-        resolve: { isAuth }
-      }).
-      when("/movies/:movieId", {
-        templateUrl: "partials/movie-brief.html",
-        controller: "MovieDetailCtrl",
-        resolve: { isAuth }
       }).
       otherwise({
         redirectTo: "/"
