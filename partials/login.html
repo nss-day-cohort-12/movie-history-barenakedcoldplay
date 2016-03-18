@@ -1,4 +1,73 @@
-<section class="song-list">
+<!-- ADDED THIS SECTION -->
+<nav>
+	<ul>
+  	<!-- will remove first two anchor els -->
+    <!-- search bar and button -->
+    	<li><input type="text" placeholder="Search"></li>
+    	<li>
+    		<button ng-click="search()">
+    			<span class="glyphicon glyphicon-search"></span> Search
+    		</button>
+    	</li>
+    	<li class="align-right hide"><a href="/#/logout">Login</a></li>
+  </ul>
+</nav>
+
+<div class="signIn">	
+	<div class="row">
+		<div class="col-md-12">
+			<h2>Welcome to Movie History!</h2>
+			<p>Log in to get started!</p>
+		</div>
+	</div>
+
+	<div class="song-list row signUp">
+	  <div class="main">
+	    <label for="inputUsernameEmail">Email</label>
+	    <input type="text" class="form-control" autofocus="true" ng-model="user.email">
+	    <label for="inputPasswordSignUp">Password</label>
+	    <input type="password" class="form-control password" ng-model="user.password">
+	    <button type="submit" class="btn btn btn-primary" ng-click="login(user)">Log In
+	    </button>
+	    <button type="submit" class="btn btn btn-primary" ng-click="register(user)">
+	    Sign Up
+	    </button>
+		</div>
+	</div>
+</div>	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <section class="song-list">
   <h1>Login or Register</h1>
   <div>
     Email: <input type="text" autofocus="true" ng-model="user.email" />
@@ -8,4 +77,4 @@
   </div>
   <button ng-click="login(user)">Login</button>
   <button ng-click="register(user)">Register</button>
-</section>
+</section> -->

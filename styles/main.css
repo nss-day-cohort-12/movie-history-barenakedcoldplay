@@ -1,34 +1,134 @@
 body {
   padding: 0;
-  margin: 0; }
-
+  margin: 0; 
+  color: #111;
+}
+.hide {
+  display: none;
+}
+input {
+  min-width: 200px;
+}
+button {
+  border-radius: 5px;
+  background-color: rgba(175,175,175,.7)
+}
+img {
+  height: 400px;
+  width: 100%;
+  margin: 5px 0;
+}
+p {
+  margin: 10px;
+  font-size: 1.3em;
+}
 nav {
-  background-color: goldenrod;
-  padding: 5px; }
-  nav ul li {
-    display: inline;
-    list-style-type: none;
-    padding: 5px;
-    margin: 15px 0; }
+  background-color: rgba( 135, 206, 250, .7);
+  padding: 25px; 
+  box-shadow: 0px 0px 10px gray;
 
-.text--small {
-  font-size: 0.7em; }
-
-.c-song {
-  margin: 10px 0; }
-
-.rating {
+}
+nav ul li {
   display: inline;
-  padding: 0; }
-  .rating li {
-    display: inline;
-    list-style-type: none; }
+  list-style-type: none;
+  padding: 10px;
+  margin: -5px; 
+  border-radius: 10px;
+}
+nav ul li:last-of-type {
+  background-color: rgba(230,230,230,.8);
+  float: right;
+}
+.movieList {
+  padding-bottom: 5px;
+  width: 25%;
+}
+.movieList button {
+  border:outset gray 1px;
+}
 
-.star--filled {
-  color: gold; }
+.movieList button:hover {
+  border:inset gray 1px;
+  background-color: #ffff66;
+}
+.btn-primary {
+  margin-right:5%;
+}
 
-.star--empty {
-  color: black; }
+/**********
+MAIN SECTION
+**********/
+.movie-list {
+  width: 90%;
+  margin: 0px auto;
+  text-align: center;
+  border-radius: 10px;
+}
+.movieList {
+  margin-top: 20px;
+  box-shadow: 0px 0px 5px gray;
+}
 
-/*# sourceMappingURL=main.css.map */
+img:hover {
+  box-shadow: 0 0 20px black;
+}
+/**********
+LOGGIN
+**********/
+.signIn {
+  padding-bottom: 50px;
+  width: 500px;
+  background-color: rgba(155,155,155,.3);
+  color: #444;
+  margin: 5% auto;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0px 0px 10px #31b0d5;
+
+}
+.signUp {
+  padding-top: 10px;
+}
+.password {
+  margin-bottom: 20px;  
+}
+.signUpLink {
+  color: #31B0D5;
+}
+.logout {
+  margin-left: 120px;
+}
+.main {
+  max-width: 320px;
+  margin: 0 auto;
+}
+.login-or {
+  position: relative;
+  font-size: 18px;
+  color: #aaa;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.span-or {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: -2px;
+  margin-left: -25px;
+  background-color: #fff;
+  width: 50px;
+  text-align: center;
+}
+.hr-or {
+  background-color: #cdcdcd;
+  height: 1px;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}
+h3 {
+  text-align: center;
+  line-height: 300%;
+}
 

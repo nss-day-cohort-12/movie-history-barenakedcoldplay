@@ -32,6 +32,7 @@ MovieHistory.controller("MovieCtrl", [
     let movieToAdd = {
       poster: "",
       title: "",
+      plot: "",
       year: "",
       actors: [],
       user: null,
@@ -83,9 +84,10 @@ MovieHistory.controller("MovieCtrl", [
             $scope.searchSuccessful = true;
             movieToAdd.poster = OMDBMovieData.Poster;
             movieToAdd.title = OMDBMovieData.Title;
+            movieToAdd.plot = OMDBMovieData.Plot;
             movieToAdd.year = OMDBMovieData.Year;
             movieToAdd.user = null;
-            movieToAdd.actors = OMDBMovieData.Actors.split(',');
+            movieToAdd.actors = OMDBMovieData.Actors.split(',').toString();
             $scope.searchResults[0] = movieToAdd;
           } else {
             console.log('no API call made to OMDB');
